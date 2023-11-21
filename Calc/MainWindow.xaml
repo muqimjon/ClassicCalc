@@ -7,6 +7,20 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="300"
         WindowStyle="ThreeDBorderWindow">
+    <Window.Resources>
+        <Style x:Key="CalcButtonStyle" TargetType="Button">
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="Button">
+                        <Border Background="{TemplateBinding Background}" Margin="5" CornerRadius="5">
+                            <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                        </Border>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+            <Setter Property="Foreground" Value="White"/>
+        </Style>
+    </Window.Resources>
     <Grid Background="#3D3D3D">
         <Grid.RowDefinitions>
             <RowDefinition Height="20"/>
@@ -34,245 +48,24 @@
                 <ColumnDefinition Width="*"/>
             </Grid.ColumnDefinitions>
 
-            <Button Content="+" Click="ButtonAdd">
-                <Button.Template>
-                    <ControlTemplate TargetType="Button">
-                        <Border Background="#212122" Margin="5" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="{TemplateBinding BorderThickness}" CornerRadius="5">
-                            <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
-                        </Border>
-                    </ControlTemplate>
-                </Button.Template>
-                <Button.Foreground>
-                    <SolidColorBrush Color="White"/>
-                </Button.Foreground>
-            </Button>
-
-            <Button Content="-" Grid.Column="1" Click="ButtonSubtract">
-                <Button.Template>
-                    <ControlTemplate TargetType="Button">
-                        <Border Background="#212122" Margin="5" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="{TemplateBinding BorderThickness}" CornerRadius="5">
-                            <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
-                        </Border>
-                    </ControlTemplate>
-                </Button.Template>
-                <Button.Foreground>
-                    <SolidColorBrush Color="White"/>
-                </Button.Foreground>
-            </Button>
-
-            <Button Content="*" Grid.Column="2" Click="ButtonMultiple">
-                <Button.Template>
-                    <ControlTemplate TargetType="Button">
-                        <Border Background="#212122" Margin="5" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="{TemplateBinding BorderThickness}" CornerRadius="5">
-                            <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
-                        </Border>
-                    </ControlTemplate>
-                </Button.Template>
-                <Button.Foreground>
-                    <SolidColorBrush Color="White"/>
-                </Button.Foreground>
-            </Button>
-
-            <Button Content="/" Grid.Column="3" Click="ButtonDivide">
-                <Button.Template>
-                    <ControlTemplate TargetType="Button">
-                        <Border Background="#212122" Margin="5" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="{TemplateBinding BorderThickness}" CornerRadius="5">
-                            <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
-                        </Border>
-                    </ControlTemplate>
-                </Button.Template>
-                <Button.Foreground>
-                    <SolidColorBrush Color="White"/>
-                </Button.Foreground>
-            </Button>
-
-            <Button Content="1" Grid.Row="1" Click="ButtonNumber">
-                <Button.Template>
-                    <ControlTemplate TargetType="Button">
-                        <Border Background="#5E5E5E" Margin="5" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="{TemplateBinding BorderThickness}" CornerRadius="5">
-                            <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
-                        </Border>
-                    </ControlTemplate>
-                </Button.Template>
-                <Button.Foreground>
-                    <SolidColorBrush Color="White"/>
-                </Button.Foreground>
-            </Button>
-            <Button Content="2" Grid.Column="1" Grid.Row="1" Click="ButtonNumber">
-                <Button.Template>
-                    <ControlTemplate TargetType="Button">
-                        <Border Background="#5E5E5E" Margin="5" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="{TemplateBinding BorderThickness}" CornerRadius="5">
-                            <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
-                        </Border>
-                    </ControlTemplate>
-                </Button.Template>
-                <Button.Foreground>
-                    <SolidColorBrush Color="White"/>
-                </Button.Foreground>
-            </Button>
-            <Button Content="3" Grid.Column="2" Grid.Row="1" Click="ButtonNumber">
-                <Button.Template>
-                    <ControlTemplate TargetType="Button">
-                        <Border Background="#5E5E5E" Margin="5" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="{TemplateBinding BorderThickness}" CornerRadius="5">
-                            <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
-                        </Border>
-                    </ControlTemplate>
-                </Button.Template>
-                <Button.Foreground>
-                    <SolidColorBrush Color="White"/>
-                </Button.Foreground>
-            </Button>
-            <Button Content="C" Grid.Column="3" Grid.Row="1" Click="ButtonClean">
-                <Button.Template>
-                    <ControlTemplate TargetType="Button">
-                        <Border Background="#212122" Margin="5" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="{TemplateBinding BorderThickness}" CornerRadius="5">
-                            <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
-                        </Border>
-                    </ControlTemplate>
-                </Button.Template>
-                <Button.Foreground>
-                    <SolidColorBrush Color="White"/>
-                </Button.Foreground>
-            </Button>
-
-
-            <Button Content="4" Grid.Row="2" Click="ButtonNumber">
-                <Button.Template>
-                    <ControlTemplate TargetType="Button">
-                        <Border Background="#5E5E5E" Margin="5" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="{TemplateBinding BorderThickness}" CornerRadius="5">
-                            <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
-                        </Border>
-                    </ControlTemplate>
-                </Button.Template>
-                <Button.Foreground>
-                    <SolidColorBrush Color="White"/>
-                </Button.Foreground>
-            </Button>
-
-
-            <Button Content="5" Grid.Column="1" Grid.Row="2" Click="ButtonNumber">
-                <Button.Template>
-                    <ControlTemplate TargetType="Button">
-                        <Border Background="#5E5E5E" Margin="5" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="{TemplateBinding BorderThickness}" CornerRadius="5">
-                            <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
-                        </Border>
-                    </ControlTemplate>
-                </Button.Template>
-                <Button.Foreground>
-                    <SolidColorBrush Color="White"/>
-                </Button.Foreground>
-            </Button>
-
-
-            <Button Content="6" Grid.Column="2" Grid.Row="2" Click="ButtonNumber">
-                <Button.Template>
-                    <ControlTemplate TargetType="Button">
-                        <Border Background="#5E5E5E" Margin="5" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="{TemplateBinding BorderThickness}" CornerRadius="5">
-                            <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
-                        </Border>
-                    </ControlTemplate>
-                </Button.Template>
-                <Button.Foreground>
-                    <SolidColorBrush Color="White"/>
-                </Button.Foreground>
-            </Button>
-
-            <Button Content="⌫" Grid.Column="3" Grid.Row="2" Click="ButtonBackSpace">
-                <Button.Template>
-                    <ControlTemplate TargetType="Button">
-                        <Border Background="#212122" Margin="5" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="{TemplateBinding BorderThickness}" CornerRadius="5">
-                            <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
-                        </Border>
-                    </ControlTemplate>
-                </Button.Template>
-                <Button.Foreground>
-                    <SolidColorBrush Color="White"/>
-                </Button.Foreground>
-            </Button>
-
-
-
-            <Button Content="7" Grid.Row="3" Click="ButtonNumber">
-                <Button.Template>
-                    <ControlTemplate TargetType="Button">
-                        <Border Background="#5E5E5E" Margin="5" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="{TemplateBinding BorderThickness}" CornerRadius="5">
-                            <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
-                        </Border>
-                    </ControlTemplate>
-                </Button.Template>
-                <Button.Foreground>
-                    <SolidColorBrush Color="White"/>
-                </Button.Foreground>
-            </Button>
-
-
-            <Button Content="8" Grid.Column="1" Grid.Row="3" Click="ButtonNumber">
-                <Button.Template>
-                    <ControlTemplate TargetType="Button">
-                        <Border Background="#5E5E5E" Margin="5" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="{TemplateBinding BorderThickness}" CornerRadius="5">
-                            <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
-                        </Border>
-                    </ControlTemplate>
-                </Button.Template>
-                <Button.Foreground>
-                    <SolidColorBrush Color="White"/>
-                </Button.Foreground>
-            </Button>
-
-            <Button Content="9" Grid.Column="2" Grid.Row="3" Click="ButtonNumber">
-                <Button.Template>
-                    <ControlTemplate TargetType="Button">
-                        <Border Background="#5E5E5E" Margin="5" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="{TemplateBinding BorderThickness}" CornerRadius="5">
-                            <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
-                        </Border>
-                    </ControlTemplate>
-                </Button.Template>
-                <Button.Foreground>
-                    <SolidColorBrush Color="White"/>
-                </Button.Foreground>
-            </Button>
-
-
-            <Button Content="=" Grid.Column="3" Grid.Row="3" Grid.RowSpan="2" Click="ButtonEqual">
-                <Button.Template>
-                    <ControlTemplate TargetType="Button">
-                        <Border Background="#A7230A" Margin="5" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="{TemplateBinding BorderThickness}" CornerRadius="5">
-                            <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
-                        </Border>
-                    </ControlTemplate>
-                </Button.Template>
-                <Button.Foreground>
-                    <SolidColorBrush Color="White"/>
-                </Button.Foreground>
-            </Button>
-
-
-            <Button Content="0" Grid.Row="4" Grid.ColumnSpan="2" Click="ButtonNumber">
-                <Button.Template>
-                    <ControlTemplate TargetType="Button">
-                        <Border Background="#5E5E5E" Margin="5" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="{TemplateBinding BorderThickness}" CornerRadius="5">
-                            <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
-                        </Border>
-                    </ControlTemplate>
-                </Button.Template>
-                <Button.Foreground>
-                    <SolidColorBrush Color="White"/>
-                </Button.Foreground>
-            </Button>
-
-
-            <Button Content="." Grid.Column="2" Grid.Row="4" Click="ButtonDot">
-                <Button.Template>
-                    <ControlTemplate TargetType="Button">
-                        <Border Background="#5E5E5E" Margin="5" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="{TemplateBinding BorderThickness}" CornerRadius="5">
-                            <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
-                        </Border>
-                    </ControlTemplate>
-                </Button.Template>
-                <Button.Foreground>
-                    <SolidColorBrush Color="White"/>
-                </Button.Foreground>
-            </Button>
+            <Button Content="+" Click="ButtonAdd" Background="#212122" Style="{StaticResource CalcButtonStyle}"/>
+            <Button Content="-" Grid.Column="1" Click="ButtonSubtract"  Background="#212122" Style="{StaticResource CalcButtonStyle}"/>
+            <Button Content="*" Grid.Column="2" Click="ButtonMultiple"  Background="#212122" Style="{StaticResource CalcButtonStyle}"/>
+            <Button Content="/" Grid.Column="3" Click="ButtonDivide" Background="#212122" Style="{StaticResource CalcButtonStyle}"/>
+            <Button Content="1" Grid.Row="1" Click="ButtonNumber" Background="#5E5E5E" Style="{StaticResource CalcButtonStyle}"/>
+            <Button Content="2" Grid.Column="1" Grid.Row="1" Click="ButtonNumber" Background="#5E5E5E" Style="{StaticResource CalcButtonStyle}"/>
+            <Button Content="3" Grid.Column="2" Grid.Row="1" Click="ButtonNumber" Background="#5E5E5E" Style="{StaticResource CalcButtonStyle}"/>
+            <Button Content="C" Grid.Column="3" Grid.Row="1" Click="ButtonClean"  Background="#212122" Style="{StaticResource CalcButtonStyle}"/>
+            <Button Content="4" Grid.Row="2" Click="ButtonNumber" Background="#5E5E5E" Style="{StaticResource CalcButtonStyle}"/>
+            <Button Content="5" Grid.Column="1" Grid.Row="2" Click="ButtonNumber" Background="#5E5E5E" Style="{StaticResource CalcButtonStyle}"/>
+            <Button Content="6" Grid.Column="2" Grid.Row="2" Click="ButtonNumber" Background="#5E5E5E" Style="{StaticResource CalcButtonStyle}"/>
+            <Button Content="⌫" Grid.Column="3" Grid.Row="2" Click="ButtonBackSpace"  Background="#212122" Style="{StaticResource CalcButtonStyle}"/>
+            <Button Content="7" Grid.Row="3" Click="ButtonNumber" Background="#5E5E5E" Style="{StaticResource CalcButtonStyle}"/>
+            <Button Content="8" Grid.Column="1" Grid.Row="3" Click="ButtonNumber" Background="#5E5E5E" Style="{StaticResource CalcButtonStyle}"/>
+            <Button Content="9" Grid.Column="2" Grid.Row="3" Click="ButtonNumber" Background="#5E5E5E" Style="{StaticResource CalcButtonStyle}"/>
+            <Button Content="=" Grid.Column="3" Grid.Row="3" Grid.RowSpan="2" Click="ButtonEqual"  Background="#A7230A" Style="{StaticResource CalcButtonStyle}"/>
+            <Button Content="0" Grid.Row="4" Grid.ColumnSpan="2" Click="ButtonNumber"  Background="#5E5E5E" Style="{StaticResource CalcButtonStyle}"/>
+            <Button Content="." Grid.Column="2" Grid.Row="4" Click="ButtonDot" Background="#5E5E5E" Style="{StaticResource CalcButtonStyle}"/>
         </Grid>
     </Grid>
 </Window>

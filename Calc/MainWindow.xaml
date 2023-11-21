@@ -5,8 +5,9 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Calc"
         mc:Ignorable="d"
+        Background="Transparent"
         Title="MainWindow" Height="450" Width="300"
-        WindowStyle="ThreeDBorderWindow">
+        WindowStyle="None">
     <Window.Resources>
         <Style x:Key="CalcButtonStyle" TargetType="Button">
             <Setter Property="Template">
@@ -18,15 +19,17 @@
                     </ControlTemplate>
                 </Setter.Value>
             </Setter>
-            <Setter Property="Foreground" Value="White"/>
+            <Setter Property="Foreground" Value="Snow"/>
         </Style>
     </Window.Resources>
+    
     <Grid Background="#3D3D3D">
         <Grid.RowDefinitions>
             <RowDefinition Height="20"/>
             <RowDefinition Height=".2*"/>
             <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
+        
         <Border Background="Wheat">
             
         </Border>
@@ -35,17 +38,17 @@
         </Border>
         <Grid Grid.Row="2">
             <Grid.RowDefinitions>
-                <RowDefinition Height="*"/>
-                <RowDefinition Height="*"/>
-                <RowDefinition Height="*"/>
-                <RowDefinition Height="*"/>
-                <RowDefinition Height="*"/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
             </Grid.RowDefinitions>
             <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="*"/>
-                <ColumnDefinition Width="*"/>
-                <ColumnDefinition Width="*"/>
-                <ColumnDefinition Width="*"/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
             </Grid.ColumnDefinitions>
 
             <Button Content="+" Click="ButtonAdd" Background="#212122" Style="{StaticResource CalcButtonStyle}"/>
